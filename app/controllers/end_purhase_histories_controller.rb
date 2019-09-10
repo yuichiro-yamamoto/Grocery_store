@@ -1,0 +1,2 @@
+class EndPurhaseHistoriesController < ApplicationController
+end
