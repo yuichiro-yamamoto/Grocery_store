@@ -1,1 +1,28 @@
-<Strong>マイページ</Strong>
+<div>
+	<strong>マイページ</strong>
+
+  <ul class="nav nav-tabs" role="tablist">
+
+    <span class="active" role="presentation">
+      <a aria-controls="tab_a" data-toggle="tab" href="#tab_a" role="tab">会員情報</a>
+    </span>
+
+    <span role="presentation">
+      <a aria-controls="tab_b" data-toggle="tab" href="#tab_b" role="tab">商品情報</a>
+    </span>
+
+  </ul>
+
+ 
+    <div class="tab-content">
+     <div class="tab-pane active" id="tab_a" role="tabpanel">
+      <p><%= link_to "編集", edit_end_user_path(@user.id) %></p>
+     </div>
+    </div>
+
+
+
+
+
+
+</div>

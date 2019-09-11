@@ -1,0 +1,43 @@
+<strong>会員登録画面</strong>
+
+
+ <%=form_with model: @user, local: true do |f| %>
+
+   <div>
+    <%= f.label :name, "名前" %><br />
+    <%= f.text_field :name %>
+   </div>
+
+   <div>
+   	<%= f.label :name_kana, "フリガナ" %><br />
+   	<%= f.text_field :name_kana %>
+   </div>
+
+   <div>
+    <%= f.label :postal_code, "郵便番号" %><br />
+    <%= f.text_field :postal_code %>
+   </div>
+
+   <div>
+    <%= f.label :address, "住所" %><br />
+    <%= f.text_area :address %>
+   </div>
+
+   <div>
+    <%= f.label :telephone_number, "電話番号" %><br />
+    <%= f.telephone_field :telephone_number %>
+   </div>
+
+   <div>
+    <%= f.label :email, "メールアドレス" %><br />
+	<%= f.text_field :email %>
+   </div>
+
+   <div>
+   	<%= f.submit "マイページへ"%>
+   </div>
+
+
+
+
+<% end %>
