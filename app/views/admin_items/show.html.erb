@@ -1,0 +1,23 @@
+<Strong>商品詳細ページ</Strong><br />
+
+
+<%= attachment_image_tag @item, :item_image, :fill, 150, 150, format: 'jpeg' %><br />
+
+ <h4>商品名 : <%= @item.item_name %></h4>
+ 
+
+ <h4>商品在庫数 : <%= @item.stock %>個</h4>
+
+ <h4>商品価格 : <%= @price.to_i %>円</h4>
+
+ <h4>商品容量 : <%= @item.weight %>g</h4>
+
+ <h4>販売状況 : <%= @item.sales_status %></h4>
+
+ <h4>商品説明</h4>
+ <h4><%= @item.item_explain %></h4>
+
+<span><%= link_to '商品編集画面', edit_item_path(@item.id) %></span>
+
+<span><%= link_to '商品削除', item_path(@item.id), method: :delete %></span>
+

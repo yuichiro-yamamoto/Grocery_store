@@ -1,0 +1,46 @@
+<strong>商品追加画面</strong>
+
+
+   	<%= form_with model: @item, local: true do |i| %>
+
+   	<div>
+   	 <%= i.attachment_field :item_image %>
+   	</div>
+
+   <div>
+   	<%= i.label :item_name, "商品名" %><br />
+   	<%= i.text_field :item_name %>
+   </div>
+
+   <div>
+   	<%= i.label :stock, "在庫数" %><br />
+   	<%= i.text_field :stock %>
+   </div>
+
+   <div>
+    <%= i.label :price, "価格" %><br />
+    <%= i.text_field :price %>
+   </div>
+
+   <div>
+    <%= i.label :weight, "商品容量" %><br />
+    <%= i.text_field :weight %>
+   </div>
+
+   <div>
+   	<%= i.label :item_explain, "商品説明" %><br />
+   	<%= i.text_area :item_explain %>
+   </div>
+
+
+   <div>
+    <%= i.label :sales_status, "販売状況" %><br />
+    <%= i.select :sales_status, Item.sales_statuses.keys, :selecte => Item.sales_statuses[@item.sales_status] %>
+   </div>
+
+
+
+     <%= i.submit "商品追加" %>
+
+
+<% end %>

@@ -1,0 +1,17 @@
+<strong>退会画面</strong>
+
+ <%=form_with model: @user, local: true do |f| %>
+
+ 　<div>
+    <%= f.label :email, "メールアドレス" %><br />
+	<%= f.text_field :email %>
+   </div>
+
+   <div>
+  	<%= f.label :password, "パスワード" %><br />
+  	<%= f.password_field :password %>
+   </div>
+
+<%= f.submit "退会する" %>
+
+<% end %>
