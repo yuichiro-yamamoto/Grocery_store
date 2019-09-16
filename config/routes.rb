@@ -55,6 +55,11 @@ Rails.application.routes.draw do
  get 'admin_users/show' => 'admin_users#show'
 
 
+# ーーーーー管理ログアウトーーーーーー
+ devise_scope :admin_user do
+    get '/admin_users/sign_out' => 'admin_users/sessions#destroy'
+  end
+
 
 # ーーーーー管理商品追加ーーー
 

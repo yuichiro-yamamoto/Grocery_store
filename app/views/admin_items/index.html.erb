@@ -1,15 +1,15 @@
-<strong>商品一覧ページ</strong></br>
+<div><%= render 'admin_users/admin_header' %></div>
+ 
+ <strong>商品一覧ページ</strong></br>
 
-<% @items.each do |a| %>
+  <% @items.each do |a| %>
 
-  <div class="item_index">
-   <%= link_to admin_item_path(a.id) do %>
-    <div class="img"><%= attachment_image_tag a, :item_image, :fill, 100, 100, format: 'jpeg' %></div>
-    <div><%= a.item_name %></div>
-   <% end %>
-  </div>
+   <div class="item_index">
+    <%= link_to admin_item_path(a.id) do %>
+     <div class="img"><%= attachment_image_tag a, :item_image, :fill, 150, 150, format: 'jpeg' %></div>
+     <div><%= a.item_name %></div>
+    <% end %>
+   </div>
 
-
-
-<% end %>
+  <% end %>
 

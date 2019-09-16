@@ -6,8 +6,10 @@ class AdminItemsController < ApplicationController
 
     def show
     	 @item = Item.find(params[:id])
-         @date = Tax.find(1).end
 
+# ーーーーーーーーー税込み価格表示の為の計算ーーーーーー
+
+         @date = Tax.find(1).end
     	 if Date.today <= @date
     	 	@tax = 1.08
     	 	@price =  @item.price*@tax
