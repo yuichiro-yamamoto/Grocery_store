@@ -1,31 +1,16 @@
+ <div class='body'><%= render 'end_users/end_header' %></div>
+   <h1 class="title">マイページ</h1>
 
-	<strong>マイページ</strong>
+    <div class="mini_body">
+      <span class="mini_title"><%= link_to "会員情報編集ページ", edit_end_user_path(@user.id) %></span>
+      <span class="mini_title"><%= link_to "退会ページ", end_users_unsubscribe_path %></span>
+    </div>
 
-  <!-- <ul class="nav nav-tabs" role="tablist">
+    <div class="mini_body">
+      <span class="mini_title"><%= link_to "ログアウト", destroy_end_user_session_path, method: :delete %></span>
+    </div>
 
-    <span class="active" role="presentation">
-      <a aria-controls="tab_a" data-toggle="tab" href="#tab_a" role="tab">会員情報</a>
-    </span>
-
-    <span role="presentation">
-      <a aria-controls="tab_b" data-toggle="tab" href="#tab_b" role="tab">商品情報</a>
-    </span>
-
-  </ul> -->
-
- 
-    <!-- <div class="tab-content">
-     <div class="tab-pane active" id="tab_a" role="tabpanel"> -->
-    <span>
-      <p><%= link_to "会員情報編集ページ", edit_end_user_path(@user.id) %></p>
-
-
-    <!-- <div class="tab-content">
-     <div class="tab-pane active" id="tab_a" role="tabpanel"> -->
-      <p><%= link_to "退会ページ", end_users_unsubscribe_path %></p>
-     </span>
-
-    
+</div>
 
 
 

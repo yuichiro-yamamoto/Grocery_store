@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_084630) do
+ActiveRecord::Schema.define(version: 2019_09_20_051848) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2019_09_15_084630) do
     t.integer "purchase_number", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "item_id"
+    t.integer "end_user_id"
   end
 
   create_table "end_purchase_details", force: :cascade do |t|
@@ -51,9 +53,10 @@ ActiveRecord::Schema.define(version: 2019_09_15_084630) do
     t.integer "postal_code_history", null: false
     t.string "address_history", null: false
     t.string "destination_name_history", null: false
-    t.string "delivery_status", null: false
+    t.integer "delivery_status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "end_purchase_history_id"
   end
 
   create_table "end_purchase_histories", force: :cascade do |t|
@@ -63,6 +66,8 @@ ActiveRecord::Schema.define(version: 2019_09_15_084630) do
     t.integer "total_item_cost", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "end_user_id"
+    t.integer "payment"
   end
 
   create_table "end_users", force: :cascade do |t|

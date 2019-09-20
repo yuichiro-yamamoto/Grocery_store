@@ -1,0 +1,28 @@
+<div class='body'><%= render 'end_users/end_header' %></div>
+ 
+  <h1  class="title">商品詳細</h1></br>
+
+  <div class="end_show">
+    <%= attachment_image_tag @item, :item_image, :fill, 250, 250, format: 'jpeg' %><br />
+    <h3>商品名 : <%= @item.item_name %></h3>
+    <h3>商品価格(税込み) : <%= (@item.price*@tax).to_i  %>円</h3>
+    <h3>在庫・販売状況 : <%= @item.sales_status %></h3>
+    <h3>商品容量 : <%= @item.weight %>g</h3>
+    <h3>商品説明</h3>
+    <h3><%= @item.item_explain %></h3>
+ 
+    <%= form_for @cart, path: end_cart_items_path, method: :post do |c| %>
+      <%= c.hidden_field :purchase_number, value: 1 %>
+      <%= c.hidden_field :item_id, value: @item.id %>
+      <%= c.submit "商品追加" %>
+    <% end %>
+
+  </div>
+
+
+
+<!-- 
+注意
+
+purchase_numberカラムに購入予定商品数を１でいれている
+item_idカラムに管理者が投稿した商品情報のIDをいれている -->

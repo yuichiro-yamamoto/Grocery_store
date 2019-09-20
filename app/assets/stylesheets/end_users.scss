@@ -1,3 +1,74 @@
 // Place all the styles related to the end_users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.body{
+	text-align: center;
+	font-size: 30px;
+}
+
+
+
+.title{
+	text-align: center;
+}
+
+
+.mini_body{
+	text-align: center;
+	font-size: 20px;
+}
+
+
+.mini_title{
+	margin-right: 15px;
+}
+
+
+.end_show{
+	text-align: center;
+}
+
+
+//-------  ログイン画面 ---------
+
+
+.log_in_body{
+	text-align: center;
+}
+
+
+.field{
+	font-size: 20px;
+}
+
+
+.log_in_botton{
+	margin-top: 15px;
+}
+
+
+//----- 登録画面 --------
+
+
+.registration_body{
+	text-align: center;
+}
+
+
+.botton{
+	margin-top: 15px;
+}
+
+
+//------ 編集画面 -------
+
+
+.edit_body{
+	text-align: center;
+}
+
+
+.edit_botton{
+	margin-top: 15px;
+}

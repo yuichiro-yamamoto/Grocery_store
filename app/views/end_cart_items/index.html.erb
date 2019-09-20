@@ -1,0 +1,21 @@
+<div class='body'><%= render 'end_users/end_header' %></div>
+ 
+ <div class="body">
+  <h2>ショッピングカート</h2>
+
+   <% @carts.each do |cart| %>
+    <div><%= attachment_image_tag cart.item, :item_image, :fill, 200, 200, format: 'jpg', fallback: "no_image.jpg" %></div>
+    <div>商品名 : <%= cart.item.item_name %></div>
+    <div>価格  : <%= (cart.item.price*@tax).to_i %>円</div>
+    <div>販売状況　: <%= cart.item.sales_status %></div>
+
+    <div  class="body2">
+     <%= form_with model: @item do |i| %>
+      <div class="delete">購入数  : <%= i.text_field :purchase_number %>個</div>
+      <span><%= link_to "商品削除", end_cart_item_path(cart.id), method: :delete %></span>
+     <% end %>
+    </div>
+
+   <% end %>
+
+</div>

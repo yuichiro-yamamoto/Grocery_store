@@ -1,7 +1,7 @@
 class CreateEndPurchaseDetails < ActiveRecord::Migration[5.2]
-  
+
   def change
-    
+
     create_table :end_purchase_details do |t|
 
       t.string :item_image_history_id, null:false
@@ -15,7 +15,7 @@ class CreateEndPurchaseDetails < ActiveRecord::Migration[5.2]
 
       # ----enumwを使用----
       t.string :delivery_status, null:false
-      
+
       t.timestamps
 
     end

@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
 
-# ーー一般トップページーーー
+#----- 一般トップページ -----
 
  get '/top' => 'root#top'
 
 
 
-# ---- 一般ログイン・登録-------
+#------ 一般ログイン・登録 -----------
 
 
  devise_for :end_users, :controllers => {
@@ -15,26 +15,8 @@ Rails.application.routes.draw do
     :sessions => 'end_users/sessions'
   }
 
-# ーーー一般登録ミスーーー
-  # get '/end_users/sign_up' => 'end_users/registrations#new'
-  # post '/end_users' => 'end_users/registrations#creare'
 
-
-# ーー一般ログインミスーーーーー
-  # get 'end_users/sign_in' => 'end_users/sessions#new'
-  # post 'end_users/sign_in' => 'end_users/sessions#create'
-
-
-
-# ーーーーミスーーーーーーー
-
-    # get 'admin_users/sign_in' => 'admin_users/sessions/new'
-    # post 'admin_users/sign_in' => 'admin_users/sessions#create'
-
-
-
-
-# ーーー一般マイページーーーー
+#------- 一般マイページ -------------
 
   get 'end_users/unsubscribe' => 'end_users#unsubscribe'
 
@@ -42,26 +24,41 @@ Rails.application.routes.draw do
   end
 
 
+#---------- 商品カート -----------
 
-# ーーー管理ログインーーー
+resources :end_cart_items, only: [:create, :index, :destroy, :update]
+
+
+#----- 一般商品一覧・詳細 ---------------
+
+resources :end_items, only: [:index, :show]
+
+
+#-------  一般商品購入・購入履歴 ---------------------
+
+resources :end_purchase_histories, only: [:new, :index]
+
+
+#---------- 管理ログイン ----------------
 
   devise_for :admin_users,  :controllers => {
     :sessions => 'admin_users/sessions'
   }
 
 
-# ーーーー管理マイページーーーーー
+# ---------- 管理マイページ -----------
 
  get 'admin_users/show' => 'admin_users#show'
 
 
-# ーーーーー管理ログアウトーーーーーー
- devise_scope :admin_user do
+# ----------管理ログアウト ----------
+
+  devise_scope :admin_user do
     get '/admin_users/sign_out' => 'admin_users/sessions#destroy'
   end
 
 
-# ーーーーー管理商品追加ーーー
+#--------------- 管理商品追加 ----------------
 
  resources :items, only: [:new, :show, :edit, :update, :destroy, :create ]do
 
@@ -73,7 +70,7 @@ Rails.application.routes.draw do
  resources :admin_items, only: [:index, :show ]do
 
  end
- # get 'end_users/:id' => 'end_users#show' ,as: 'end_users'
+
 
 
 
