@@ -36,7 +36,7 @@ resources :end_items, only: [:index, :show]
 
 #-------  一般商品購入・購入履歴 ---------------------
 
-resources :end_purchase_histories, only: [:new, :index]
+resources :end_purchase_histories, only: [:new, :create, :index]
 
 
 #---------- 管理ログイン ----------------

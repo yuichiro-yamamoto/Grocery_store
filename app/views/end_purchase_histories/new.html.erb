@@ -1,1 +1,23 @@
-<h1>購入画面</h1>
+<div class='body'><%= render 'end_users/end_header' %></div>
+ 
+<div class="purchase_body">
+ <h1>購入画面</h1></br>
+</div>
+
+  <% @items.each do |i| %>
+   <div class="item_body clearfix">
+   	<div class='image'><%= attachment_image_tag i.item, :item_image, :fill, 200, 200, format: 'jpeg' %></div>
+     <div class="item_content">
+      <h3>商品名: <%= i.item.item_name %></h3>
+      <h3>商品価格(税込み): <%= (i.item.price*@tax).to_i %>円</h3>
+      <h3>購入数: <%= i.purchase_number %>個</h3>
+     </div>
+   </div>
+  <% end %>
+
+  <div class="pay">
+   <%= form_for(@pay) do |p| %> 
+    <h3><%= p.label :"支払方法" %>: <%= p.select :payment, [["クレジットカード", "クレジットカード"], ["代金引換", "代金引換"], ["銀行振込", "銀行振込"]] %></h3>
+   <% end %>
+    <h3>商品合計金額(税込み) :<%= (@pay.item_total_price(current_end_user)*@tax).to_i %>円</h3>
+  </div>

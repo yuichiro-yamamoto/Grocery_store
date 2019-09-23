@@ -9,7 +9,6 @@ class EndCartItemsController < ApplicationController
 
   def index
   	@carts = EndCartItem.where(end_user_id: current_end_user.id )      #<------現在ログインしているユーザーのカート情報のみ検索。
-    @item = EndCartItem.find_by(purchase_number: '1')   #<-----purchase_numner（購入数）カラムに１を入れている。
 
     @date = Tax.find(1).end
      if Date.today <= @date   #<--------現在の日時が2019/9/30以前なら
@@ -17,6 +16,7 @@ class EndCartItemsController < ApplicationController
      else
       @tax = 1.1              #<--------2019/10/1以降は10％
      end
+
   end
 
   def destroy
@@ -26,9 +26,9 @@ class EndCartItemsController < ApplicationController
   end
 
   def update
-    cart = EndCartItem.find_by(current_end_user.id)
-    carts.update_all("'check' = 'false'")
-    redirect_to new_end_purchase_history_path
+    cart = EndCartItem.find(params[:id])
+    cart.update(end_cart_item_params)
+    redirect_to end_cart_items_path(cart.id)
   end
 
   private

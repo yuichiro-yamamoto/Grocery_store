@@ -1,3 +1,43 @@
 // Place all the styles related to the end_purchase_histories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//------- 購入画面 ---------
+
+.purchase_body{
+	text-align: center;
+	}
+
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.item_body{
+	 width: 1000px;
+	 margin: 0 auto;
+	 background-color: orange;
+}
+
+
+.image{
+	float: left;
+}
+
+
+.item_content{
+	float: left;
+	width: 300px;
+	margin-left :20px;
+	background-color: green;
+}
+
+
+.pay{
+	text-align: center;
+}
+
+

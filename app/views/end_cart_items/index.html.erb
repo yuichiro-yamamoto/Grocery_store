@@ -4,18 +4,19 @@
   <h2>ショッピングカート</h2>
 
    <% @carts.each do |cart| %>
-    <div><%= attachment_image_tag cart.item, :item_image, :fill, 200, 200, format: 'jpg', fallback: "no_image.jpg" %></div>
+    <div><%= attachment_image_tag cart.item, :item_image, :fill, 200, 200, format: 'jpg' %></div>
     <div>商品名 : <%= cart.item.item_name %></div>
     <div>価格  : <%= (cart.item.price*@tax).to_i %>円</div>
     <div>販売状況　: <%= cart.item.sales_status %></div>
 
     <div  class="body2">
-     <%= form_with model: @item do |i| %>
-      <div class="delete">購入数  : <%= i.text_field :purchase_number %>個</div>
+     <%= form_with model: cart do |i| %>
+      <div class="delete">購入数  : <%= i.number_field :purchase_number %>個</div>
       <span><%= link_to "商品削除", end_cart_item_path(cart.id), method: :delete %></span>
+      <span><%= link_to "商品購入画面", new_end_purchase_history_path %></span>
+      <div><%= i.submit "商品数変更" %></div>
      <% end %>
     </div>
-
    <% end %>
 
 </div>
