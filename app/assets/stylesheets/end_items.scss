@@ -2,9 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.title{
+
+//----- 商品一覧 ---------
+
+
+.item_header{
+	text-align: center;
+	font-size: 30px;
+}
+
+.item_title{
+	color: black;
 	text-align: center;
 }
+
 .end_item_index{
-	 float: left;
+     margin-left: 55px;
+     float: left;
+     font-size: 25px;
+}
+
+//------- 商品詳細 -------
+
+.end_show{
+	text-align: center;
+}
+
+.item-submit{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-size: 25px;
 }

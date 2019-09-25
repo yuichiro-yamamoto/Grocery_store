@@ -68,3 +68,6 @@ gem "jquery-rails"
 
 gem "refile", require: "refile/rails", github: 'refile/refile'
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
+
+gem 'pry-byebug'
+

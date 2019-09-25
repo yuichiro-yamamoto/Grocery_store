@@ -1,0 +1,12 @@
+<div class='detail_header'><%= render 'end_users/end_header' %></div>
+ <div class="index_body">
+  <h1>購入履歴</h1>
+   <% @items.each do |i| %>
+    <%= link_to end_purchase_history_path(i.id) do %>
+     <h3>税込み商品合計額 : <%= i.total_item_cost %>円</h3>
+     <h3>送料 : <%= i.delivery_fee %>円</h3>
+     <h3>合計金額（送料込み）: <%= i.total_cost %>円</h3>
+     <h3>支払方法 : <%= i.payment %></h3>
+    <% end %>
+   <% end %>
+</div>

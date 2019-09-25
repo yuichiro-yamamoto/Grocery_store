@@ -1,13 +1,16 @@
- <div class='body'><%= render 'end_users/end_header' %></div>
+<div class="my_page">
+
+  <div class='header'><%= render 'end_users/end_header' %></div>
    <h1 class="title">マイページ</h1>
 
     <div class="mini_body">
-      <span class="mini_title"><%= link_to "会員情報編集ページ", edit_end_user_path(@user.id) %></span>
-      <span class="mini_title"><%= link_to "退会ページ", end_users_unsubscribe_path %></span>
+      <span class="label label-info"><%= link_to "会員情報編集", edit_end_user_path(@user.id) %></span>
+      <span class="label label-danger"><%= link_to "退会", end_users_unsubscribe_path %></span>
     </div>
 
     <div class="mini_body">
-      <span class="mini_title"><%= link_to "ログアウト", destroy_end_user_session_path, method: :delete %></span>
+      <span class="label label-success" ><%= link_to "購入履歴", end_purchase_histories_path %></span>
+      <span class="label label-warning"><%= link_to "ログアウト", destroy_end_user_session_path, method: :delete %></span>
     </div>
 
 </div>
