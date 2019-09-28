@@ -4,7 +4,7 @@
    <% @details.each do |d| %>
     <%= attachment_image_tag d, :item_image_history, :fill, 200, 200, format: 'jpeg' %>
     <h3>商品名 : <%= d.item_name_history %></h3>
-    <h3>税別商品価格 : <%= d.item_price_history %>円</h3>
+    <h3>税抜き商品価格 : <%= d.item_price_history %>円</h3>
     <h3>購入数 : <%= d.purchase_number_history %>個</h3>
     <h3>配送状況 : <%= d.delivery_status %></h3>
    <% end %>

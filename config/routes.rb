@@ -1,14 +1,7 @@
 Rails.application.routes.draw do
 
 
-#----- 一般トップページ -----
-
- get '/top' => 'root#top'
-
-
-
 #------ 一般ログイン・登録 -----------
-
 
  devise_for :end_users, :controllers => {
     :registrations => 'end_users/registrations',
@@ -16,12 +9,22 @@ Rails.application.routes.draw do
   }
 
 
-#------- 一般マイページ -------------
+#---------- 一般ログアウト ----------
+
+ devise_scope :end_user do
+    get '/end_users/sign_out' => 'end_users/sessions#destroy'
+  end
+
+
+#------- 一般退会 -------------
 
   get 'end_users/unsubscribe' => 'end_users#unsubscribe'
 
-  resources :end_users, only: [:show, :edit, :update, :destroy] do
-  end
+
+#------- 一般マイページ --------------
+
+  resources :end_users, only: [:show, :edit, :update] 
+  
 
 
 #---------- 商品カート -----------
@@ -60,16 +63,17 @@ resources :end_purchase_histories, only: [:new, :create, :index, :show]
 
 #--------------- 管理商品追加 ----------------
 
- resources :items, only: [:new, :show, :edit, :update, :destroy, :create ]do
+ resources :items, only: [:new, :show, :edit, :update, :destroy, :create ]
 
- end
+ 
+# ----------- 管理商品一覧・詳細 ----------
+
+ resources :admin_items, only: [:index, :show]
 
 
-# ーーーーーー管理商品管理ーーーー
+#---------- 管理購入履歴・詳細 -------------
 
- resources :admin_items, only: [:index, :show ]do
-
- end
+ resources :admin_purchase_histories, only: [:index, :show, :update]
 
 
 

@@ -20,7 +20,7 @@ class EndCartItemsController < ApplicationController
   end
 
   def destroy
-    cart = EndCartItem.find_by(end_user_id: current_end_user.id)
+    cart = EndCartItem.find(params[:id])
     cart.destroy
     redirect_to end_cart_items_path
   end

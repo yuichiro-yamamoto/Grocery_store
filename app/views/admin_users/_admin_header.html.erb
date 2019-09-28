@@ -1,5 +1,5 @@
-<div>
- <span><%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete %></span>
- <span><%= link_to "商品追加画面", new_item_path %></span>
- <span><%= link_to "管理トップページ",  admin_users_show_path %></span>
+<div class="admin_header">
+ <span class="glyphicon glyphicon-th-large" aria-hidden="true"><%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete %></span>
+ <span class="glyphicon glyphicon-inbox" aria-hidden="true"><%= link_to "商品追加", new_item_path %></span>
+ <span class="glyphicon glyphicon-user" aria-hidden="true"><%= link_to "管理者ページ",  admin_users_show_path %></span>
 </div>

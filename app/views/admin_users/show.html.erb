@@ -1,2 +1,11 @@
-<div><%= render 'admin_users/admin_header' %></div>
- <strong>管理者ページ</strong>
+<div class=admin_body> 
+ <div><%= render 'admin_users/admin_header' %></div>
+ 
+  <h1 class="admin_header">管理者ページ</h1>
+  
+  <div class="admin_theme">
+   <span class="label label-success"><%= link_to "商品一覧", admin_items_path %></span>
+   <span class="label label-danger"><%= link_to "購入履歴管理", admin_purchase_histories_path %></span>
+  </div>
+
+</div>

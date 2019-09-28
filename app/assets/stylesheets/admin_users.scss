@@ -1,3 +1,42 @@
 // Place all the styles related to the admin_users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//----- 管理ヘッダー -------
+
+.admin_header{
+	font-size: 30px;
+}
+
+//------ ログイン画面 ------
+
+.session{
+	font-size: 30px;
+	margin-top: 15px;
+}
+
+
+
+//----- 管理者ぺージ ------
+
+
+.admin_header{
+	color: orange;
+	font-size: 40px;
+}
+
+.admin_body{
+	margin-top: 5px;
+	text-align: center;
+	background-image: url("/images/food-2569257_1920.jpg");
+	height: 800px;
+	background-size: cover;
+}
+
+
+.admin_theme{
+	text-align: center;
+	font-size: 40px;
+	margin-top: 50px;
+}

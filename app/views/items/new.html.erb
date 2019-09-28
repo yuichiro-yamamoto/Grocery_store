@@ -1,47 +1,49 @@
-<div><%= render 'admin_users/admin_header' %></div>
+<div class="item_body">
  
- <strong>商品追加画面</strong>
+ <div class="item_header"><%= render 'admin_users/admin_header' %></div>
 
-   	<%= form_with model: @item, local: true do |i| %>
+  <h1>商品追加画面</h1>
+  
+  <%= form_with model: @item, local: true do |i| %>
 
-   	<div>
-   	 <%= i.attachment_field :item_image %>
-   	</div>
+   <h3 class="add">
+   	<%= i.attachment_field :item_image %>
+   </h3>
 
-   <div>
+   <h3>
    	<%= i.label :item_name, "商品名" %><br />
    	<%= i.text_field :item_name %>
-   </div>
+   </h3>
 
-   <div>
+   <h3>
    	<%= i.label :stock, "在庫数" %><br />
    	<%= i.text_field :stock %>
-   </div>
+   </h3>
 
-   <div>
+   <h3>
     <%= i.label :price, "価格" %><br />
     <%= i.text_field :price %>
-   </div>
+   </h3>
 
-   <div>
+   <h3>
     <%= i.label :weight, "商品容量" %><br />
     <%= i.text_field :weight %>
-   </div>
+   </h3>
 
-   <div>
+   <h3>
    	<%= i.label :item_explain, "商品説明" %><br />
    	<%= i.text_area :item_explain %>
-   </div>
+   </h3>
 
-
-   <div>
+   <h4 class="sales_status">
     <%= i.label :sales_status, "販売状況" %><br />
     <%= i.select :sales_status, Item.sales_statuses.keys, :selecte => Item.sales_statuses[@item.sales_status] %>
-   </div>
+   </h4>
+  
+  <h3 class="item_submit">
+   <%= i.submit "商品追加" %>
+  </h3>
 
+  <% end %>
 
-
-     <%= i.submit "商品追加" %>
-
-
-<% end %>
+</div>

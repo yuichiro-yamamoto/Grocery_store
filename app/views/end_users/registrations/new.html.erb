@@ -5,54 +5,54 @@
  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-   <div class="field">
+   <h3 class="field">
     <%= f.label :name, "名前" %><br />
     <%= f.text_field :name %><br />
-   </div>
+   </h3>
 
-   <div class="field">
+   <h3 class="field">
     <%= f.label :name_kana, "フリガナ" %><br />
     <%= f.text_field :name_kana %><br />
-   </div>
+   </h3>
 
-   <div class="field">
+   <h3 class="field">
     <%= f.label :postal_code, "郵便番号" %><br />
     <%= f.text_field :postal_code %><br />
-   </div>
+   </h3>
 
-   <div clsaa="field">
+   <h3 clsaa="field">
     <%= f.label :address, "住所" %><br />
     <%= f.text_area :address %><br />
-   </div>
+   </h3>
 
-   <div class="field">
+   <h3 class="field">
     <%= f.label :telephone_number, "電話番号" %><br />
     <%= f.telephone_field :telephone_number %><br />
-   </div>
+   </h3>
 
-   <div class="field">
+   <h3 class="field">
     <%= f.label :email, "メールアドレス" %><br />
     <%= f.email_field :email %>
-   </div>
+   </h3>
 
-   <div class="field">
+   <h3 class="field">
     <%= f.label :password, "パスワード" %><br/>
    <!--  <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %> -->
     <%= f.password_field :password %>
-   </div>
+   </h3>
 
-   <div class="field">
+   <h3 class="field">
     <%= f.label :password_confirmation, "パスワード再入力" %><br />
     <%= f.password_field :password_confirmation %>
-   </div>
+   </h3>
 
-   <div class="botton">
+   <h3 class="botton">
     <%= f.submit "新規登録" %>
-   </div>
+   </h3>
  <% end %>
 
- <%= render "end_users/shared/links" %>
+ <h3><%= render "end_users/shared/links" %></h3>
 
 </div>

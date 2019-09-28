@@ -1,3 +1,33 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//----- 管理者ヘッダー -------
+
+.item_header{
+	font-size: 30px;
+	margin-top: 15px;
+}
+
+
+//----- 商品追加 -------
+
+.item_body{
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.add{
+	margin-left: 200px;
+	margin-top: 25px;
+}
+
+.sales_status{
+	font-size: 28px;
+}
+
+.item_submit{
+	font-size: 30px;
+	margin-top: 25px;
+}

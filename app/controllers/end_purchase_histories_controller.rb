@@ -33,12 +33,11 @@ class EndPurchaseHistoriesController < ApplicationController
 
 # ==============================購入履歴詳細側===============================
 
-		detail = EndPurchaseDetail.new
-		 detail.end_purchase_history_id = pay.id
 		  carts = EndCartItem.where(end_user_id: current_end_user.id)
-		   carts.each do |c|
+		   carts.each do |c|					           #<------ カートに商品を入れるたびに、カートに紐づいている商品テーブルのカラムを詳細テーブルのカラムに入れる処理を繰り返す。
+		   	detail = EndPurchaseDetail.new
+		    detail.end_purchase_history_id = pay.id
 	         detail.item_image_history_id = c.item.item_image_id
-	         # binding.pry
 	          detail.item_name_history = c.item.item_name
 	          detail.item_price_history = c.item.price
 	          detail.purchase_number_history = c.purchase_number
@@ -50,18 +49,20 @@ class EndPurchaseHistoriesController < ApplicationController
 	          detail.destination_name_history = userinfo.name
 	          detail.telephone_number_history = userinfo.telephone_number
 	          detail.delivery_status = 0
+	          detail.save
+	          c.destroy    #<--------- 購入確定したカート内商品を、カートから消す処理。
 	      		end
 
-	    	detail.save
 			redirect_to end_purchase_histories_path
 	end
 
 	def index
-		@items = EndPurchaseHistory.all
+		@items = EndPurchaseHistory.where(end_user_id: current_end_user.id)
 	end
 
 	def show
-		@details = EndPurchaseDetail.all
+		@log = EndPurchaseHistory.find(params[:id])
+		@details = @log.end_purchase_details        #<------@logに結び付いている詳細テーブル
 	end
 
 	private
