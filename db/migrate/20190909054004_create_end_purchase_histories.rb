@@ -2,7 +2,7 @@ class CreateEndPurchaseHistories < ActiveRecord::Migration[5.2]
 
   def change
 
-    create_table :end_purchase_histories do |t|
+    create_table :end_purchase_histories, :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
 
      t.integer :total_cost, null:false
      t.integer :delivery_fee, null:false
