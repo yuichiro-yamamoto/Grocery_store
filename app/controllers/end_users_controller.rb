@@ -21,7 +21,7 @@ class EndUsersController < ApplicationController
     def destroy
         user = current_end_user
         user.destroy
-        redirect_to top_path
+        redirect_to '/'
     end
 
     def index
@@ -31,7 +31,7 @@ class EndUsersController < ApplicationController
     private
 
     def end_user_params
-    	params.require(:end_user).permit(:name, :name_kana, :postal_code, :address, :telephone_number)
+    	params.require(:end_user).permit(:name, :name_kana, :postal_code, :address, :telephone_number, :email)
     end
 
 end

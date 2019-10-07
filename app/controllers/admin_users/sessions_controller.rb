@@ -24,4 +24,10 @@ class AdminUsers::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  # def destroy
+  #   sign_out
+  #   redirect_to root_http://localhost:3000/admin_users/sign_in
+  # end
+
 end

@@ -10,5 +10,12 @@ class EndUser < ApplicationRecord
   has_many :end_cart_items, dependent: :destroy
   has_many :end_purchase_histories, dependent: :destroy
   
+  # def email_required?
+  # 	false
+  # end
+
+  # def email_changed?
+  # 	false
+  # end
 
 end

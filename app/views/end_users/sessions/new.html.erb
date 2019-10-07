@@ -22,12 +22,16 @@
   <% end %> -->
 
    <div class="log_in_botton">
-    <%= f.submit "ログイン" %>
+    <span><%= f.submit "ログイン" %></span>
    </div>
 
   <% end %>
 
- 　<h3><%= render "end_users/shared/links" %></h3>
+   <div class="log_in_botton">
+    <span class="label label-info"><%= link_to "会員登録ページ", new_end_user_registration_path %></span>
+   </div>
+
+ 　<!-- <h3><%= render "end_users/shared/links" %></h3> -->
 
 </div>
 

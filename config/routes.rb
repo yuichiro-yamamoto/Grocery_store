@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+#------ トッページ ------------
+
+  get '/' => 'root#top'
+
 #------ 一般ログイン・登録 -----------
 
  devise_for :end_users, :controllers => {
@@ -11,9 +15,9 @@ Rails.application.routes.draw do
 
 #---------- 一般ログアウト ----------
 
- devise_scope :end_user do
-    get '/end_users/sign_out' => 'end_users/sessions#destroy'
-  end
+ # devise_scope :end_user do
+ #    get '/end_users/sign_out' => 'end_users/sessions#destroy'
+ #  end
 
 
 #------- 一般退会 -------------
@@ -56,9 +60,9 @@ resources :end_purchase_histories, only: [:new, :create, :index, :show]
 
 # ----------管理ログアウト ----------
 
-  devise_scope :admin_user do
-    get '/admin_users/sign_out' => 'admin_users/sessions#destroy'
-  end
+  # devise_scope :admin_user do
+  #   get '/admin_users/sign_out' => 'admin_users/sessions#destroy'
+  # end
 
 
 #--------------- 管理商品追加 ----------------
