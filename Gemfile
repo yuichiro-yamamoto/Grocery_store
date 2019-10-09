@@ -71,6 +71,3 @@ gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 
 gem 'pry-byebug'
 
-# gem 'json'
-# gem 'mysql2'
-# gem 'listen', '>= 3.0.5', '< 3.2
